@@ -17,3 +17,14 @@
 <br>
 
 ##### The goal of this project is to reduce response time to medical emergencies to save lives and improve medical outcomes. Poisson regression was used to predict medical 911 call frequencies. A custom cost function used these predicted frequencies to select optimal placement of emergency response resources for rapid response.
+
+<br>
+
+<img src="images/logos/seattle.png" width="120">
+<img src="images/logos/python.png" width="120">
+<img src="images/logos/matplotlib.png" width="120">
+<img src="images/logos/jupyter.png" width="120">
+<img src="images/logos/r.png" width="120">
+<img src="images/logos/atom.png" width="120">
+<img src="images/logos/sklearn.png" width="120">
+<img src="images/logos/statsmodels.png" width="120">
