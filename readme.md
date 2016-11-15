@@ -12,7 +12,7 @@
 #### Figure 3: Count of Seattle 911 calls by day and zone.
 <br>
 
-<img src="images/count_by_day.png" width="600">
+<img src="images/count_by_day_no_outs.png" width="600">
 #### Figure 4: Count of Seattle 911 calls by day city-wide.
 <br>
 
