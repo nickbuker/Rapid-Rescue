@@ -1,18 +1,17 @@
 import numpy as np
 
 
-def allocator(units, y1, y2, y3, y4, y5, y6, y7):
+def allocator(units, preds):
     """
     Input:
     units = Integer number of emergency response units available
-    y1 through y7 = Predicted responses in zones 1 through 7
+    preds = Dictionary with predictions by zone
     Output: Allocation dictionary with zones:units
     """
-    total = y1 + y2 + y3 + y4 + y5 + y6 + y7
-    preds = [y1, y2, y3, y4, y5, y6, y7]
-    zones = ['zone1', 'zone2', 'zone3', 'zone4', 'zone5', 'zone6', 'zone7']
-    zipper = zip(zones, preds)
-    zipper = sorted(zipper, key=lambda x: x[1], reverse=True)
+    # Determine total predicted responses for later proportioning
+    total = sum(tup[1] for tup in preds)
+    # Sort preds for allocation priority if units < 7
+    preds = sorted(preds, key=lambda x: x[1], reverse=True)
 
     if units < 7:
         # Create allocation dict
@@ -21,7 +20,7 @@ def allocator(units, y1, y2, y3, y4, y5, y6, y7):
         slot = 0
         while units >= 1:
             # Assigns unit to highest predicted zone w/o a unit assigned
-            alloc[zipper[slot][0]] += 1
+            alloc[preds[slot][0]] += 1
             slot += 1
             units -= 1
         return alloc
@@ -32,7 +31,7 @@ def allocator(units, y1, y2, y3, y4, y5, y6, y7):
                  'zone5':1, 'zone6':1, 'zone7':1}
         units -= 7
         # Portion out remaing units based on predicted responses
-        for tup in zipper:
+        for tup in preds:
             alloc[tup[0]] += units * tup[1] // total
         # Adjust number of resources left
         units -= (sum(alloc.values()) - 7)
