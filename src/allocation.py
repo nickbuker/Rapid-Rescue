@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def allocator(units, y1, y2, y3, y4, y5, y6, y7):
     """
     Input:
@@ -9,13 +10,14 @@ def allocator(units, y1, y2, y3, y4, y5, y6, y7):
     """
     total = y1 + y2 + y3 + y4 + y5 + y6 + y7
     preds = [y1, y2, y3, y4, y5, y6, y7]
-    zones = ['z1', 'z2', 'z3', 'z4', 'z5', 'z6', 'z7']
+    zones = ['zone1', 'zone2', 'zone3', 'zone4', 'zone5', 'zone6', 'zone7']
     zipper = zip(zones, preds)
     zipper = sorted(zipper, key=lambda x: x[1], reverse=True)
 
     if units < 7:
         # Create allocation dict
-        alloc = {'z1':0, 'z2':0, 'z3':0, 'z4':0, 'z5':0, 'z6':0, 'z7':0}
+        alloc = {'zone1':0, 'zone2':0, 'zone3':0, 'zone4':0,
+                 'zone5':0, 'zone6':0, 'zone7':0}
         slot = 0
         while units >= 1:
             # Assigns unit to highest predicted zone w/o a unit assigned
@@ -26,7 +28,8 @@ def allocator(units, y1, y2, y3, y4, y5, y6, y7):
 
     else:
         # Create allocation dict and distribute one unit to each zone
-        alloc = {'z1':1, 'z2':1, 'z3':1, 'z4':1, 'z5':1, 'z6':1, 'z7':1}
+        alloc = {'zone1':1, 'zone2':1, 'zone3':1, 'zone4':1,
+                 'zone5':1, 'zone6':1, 'zone7':1}
         units -= 7
         # Portion out remaing units based on predicted responses
         for tup in zipper:

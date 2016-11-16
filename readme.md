@@ -1,7 +1,7 @@
 # Predicting Seattle Medical 911 Response Activity and Optimizing Allocation of Resources
 
-<img src="images/seattle_911_neighborhoods.png" width="600">
-#### Figure 1: Seattle medical 911 responses by neighborhood.
+<img src="images/data_and_model.png" width="600">
+#### Figure 1: Count of Seattle 911 responses by day city-wide and Poisson regression model predictions.
 <br>
 
 <img src="images/seattle_911_zones2.png" width="600">
@@ -12,8 +12,8 @@
 #### Figure 3: Count of Seattle 911 responses by day and zone.
 <br>
 
-<img src="images/data_and_model.png" width="600">
-#### Figure 4: Count of Seattle 911 responses by day city-wide and Poisson regression model predictions.
+<img src="images/seattle_911_neighborhoods.png" width="600">
+#### Figure 4: Seattle medical 911 responses by neighborhood.
 <br>
 
 ##### The goal of this project is to reduce response time to medical emergencies to save lives and improve medical outcomes. Poisson regression was used to predict medical 911 response frequencies. A custom cost function used these predicted frequencies to select optimal placement of emergency response resources for rapid response.
