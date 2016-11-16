@@ -38,6 +38,6 @@ class PoissonModel(object):
 if __name__ == '__main__':
     model = PoissonModel('../data/model_data_counted_no_out.csv')
     model.fit()
-    Save fitted model as pickle
-    with open('Poisson.pkl', 'w') as f:
+    # Save fitted model as pickle
+    with open('PoissonModel.pkl', 'w') as f:
         pickle.dump(model, f)
