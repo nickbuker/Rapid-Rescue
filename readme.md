@@ -1,6 +1,6 @@
 # Predicting Seattle Medical 911 Response Activity and Optimizing Allocation of Resources
 
-<img src="images/data_and_model.png" width="600">
+<img src="images/data_and_model.png" width="800">
 #### Figure 1: Count of Seattle 911 responses by day city-wide and Poisson regression model predictions.
 <br>
 
@@ -8,7 +8,7 @@
 #### Figure 2: Zones assigned for modeling purposes.
 <br>
 
-<img src="images/count_by_day_zones.png" width="600">
+<img src="images/count_by_day_zones.png" width="800">
 #### Figure 3: Count of Seattle 911 responses by day and zone.
 <br>
 
