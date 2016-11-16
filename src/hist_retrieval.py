@@ -48,11 +48,13 @@ def hist_retriever(df, mariners, seahawks, sounders, date_, night, zone):
 
     # If major travel holiday, look up historical data on travel holidays
     if date_ in trav_hol:
-        history = df[df.trav_holiday == 1]
+        history = df[(df.trav_holiday == 1) &
+                     (df.night == night)]
 
     # If 4th of July or New Years day, look up historical data on those days
     elif date_ in dang_hol:
-        history = df[df.dang_holiday == 1]
+        history = df[(df.dang_holiday == 1) &
+                     (df.night == night)]
 
     # Grab historical data based on home games, weekday, and area of Seattle
     else:
@@ -62,6 +64,7 @@ def hist_retriever(df, mariners, seahawks, sounders, date_, night, zone):
                      (df.seahawks_home == seahawks) &
                      (df.sounders_home == sounders) &
                      (df.weekday == weekday) &
+                     (df.night == night) &
                      (df[zone] == 1)]
 
     return history
