@@ -1,0 +1,42 @@
+/* IE hacks */
+
+
+
+div#header img#logo{
+	position: absolute;
+	top:25px;
+	left: 0px;
+	width: 395px;
+	height: 158px;
+}
+
+/* HOME ------------------------------------------------------------*/
+
+div.holder div.block{
+}
+
+
+/* ABOUT ------------------------------------------------------------*/
+
+div.fade-slide img{
+	width: 960px;
+	height: 345px;
+}
+
+
+div.separator{
+	border-bottom: 0px none;
+}
+
+
+/* FOOTER ------------------------------------------------------------*/
+
+
+div#footer div.footer-cols div{
+	width: 238px;
+	margin: 0px 1px;
+	float: left;
+	min-height: 170px;
+	background: url(../img/footer-separator.png) no-repeat top right;
+}
+

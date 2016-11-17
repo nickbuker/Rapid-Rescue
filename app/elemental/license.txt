@@ -1,0 +1,28 @@
+All free templates are licensed under the Creative Commons Attribution 3.0 License.
+
+What is Creative Commons?
+
+Creative Commons is a non-profit organization that, among many other things, creates and maintains a number of different licenses under which designers, coders, writers and other content creators can freely release their work.
+
+What is the Creative Commons Attribution License, and how does it apply to your free templates?
+
+The Creative Commons Attribution license is one of those licenses, and it's the one we use for all of our templates. This means you can download them and ...
+
+	Use them for personal projects.
+
+	Use them commercially.
+
+	Modify them however you want.
+
+	Port them to content management systems, blog platforms, or whatever else. (* see note below)
+
+
+... all for free (and royalty free). All you have to do is credit us and you're good to go.
+
+That's great! So how do I credit you?
+
+Just visibly credit or link to us somewhere on the site using the template. All of our templates already come with a footer credit (which is enough to satisfy the crediting requirement), but if you need to move it somewhere else feel free to do so.
+
+* How does the license apply to ports/derivative works?
+
+Like the templates themselves, any ports/derivative works have to be released under a Creative Commons Attribution license as well. They also have to visibly credit us in some way.
