@@ -7,7 +7,7 @@ app = Flask(__name__)
 # home page
 @app.route('/')
 def index():
-    return render_template('play.html', title='Emergency Predictor')
+    return render_template('response.html', title='Emergency Predictor')
 
 # home page
 @app.route('/predict')
