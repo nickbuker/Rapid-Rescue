@@ -1,0 +1,10 @@
+/*****************************************************************/
+/* 5grid 0.3.1 by n33.co | MIT+GPLv2 license licensed            */
+/* core-mobile.css: Core (mobile) stylesheet                     */
+/*****************************************************************/
+
+body { -webkit-text-size-adjust: none; } 
+.\35 grid .\31 u, .\35 grid .\32 u, .\35 grid .\33 u, .\35 grid .\34 u, .\35 grid .\35 u, .\35 grid .\36 u, .\35 grid .\37 u, .\35 grid .\38 u, .\35 grid .\39 u, .\35 grid .\31 0u, .\35 grid .\31 1u, .\35 grid .\31 2u { float: none; width: 100%; margin: 1% 0 1% 0; } 
+.\35 grid { width: 100%; margin: 0; }
+.\35 grid .row:first-child > :first-child { margin-top: 0; } 
+.\35 grid .row:last-child > :last-child { margin-bottom: 0; }
