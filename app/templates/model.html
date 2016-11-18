@@ -48,50 +48,12 @@
       <div class="row">
         <div class="4u">
           <section>
-            <h2>Make a Prediction:</h2>
-                <p>
-                  <br>
-                    Please enter the following information.  The model will predict the number of expected emergency responses from historical trends. Using this information, it will determine the optimal placements of response units.
-                </p>
-             <br>
-              <form>
-                <br>
-                Date for prediction:<br>
-                <input type="date" name="date_input" max="2020-12-31" min="2010-01-01">
-              </form>
-              <br>
-              <form>
-                Quantity of response units (between 1 and 100):<br>
-              <input type="number" name="quantity" min="1" max="100">
-              </form>
-              <br>
-              <form>
-                Is there a Mariners home game?<br>
-              <input type="radio" name="mariners" value="1" checked> Yes<br>
-              <input type="radio" name="mariners" value="0" checked> No<br>
-              </form>
-              <br>
-              <form>
-                Is there a Seahawks home game?<br>
-              <input type="radio" name="seahawks" value="1" checked> Yes<br>
-              <input type="radio" name="seahawks" value="0" checked> No<br>
-              </form>
-              <br>
-              <form>
-                Is there a Sounders home game?<br>
-              <input type="radio" name="sounders" value="1" checked> Yes<br>
-              <input type="radio" name="sounders" value="0" checked> No<br>
-              </form>
-              <br>
-              <form>
-                Time range for prediction:<br>
-              <input type="radio" name="night" value="0" checked> 6am to 6pm (daytime)<br>
-              <input type="radio" name="night" value="1" checked> 6pm to 6am (nighttime)<br>
-              </form>
-             <br>
-              <body>
-
-              <input type="button" onclick="" value="Predict">
+            <br>
+            <h2>Prediction and Allocation:</h2>
+            <p> The machine learning algorithm Poisson regression is used to predict the number of expected medical emergency responses in each zone of the city during a given period. The model considers historical trends as well as important events such as major holidays and sporting events. Note that the model is able to track with the increasing number of medical emergencies as well as seasonal trends. Once number of medical emergencies has been predicted, an allocation algorithm allocates the emergency response units to each zone based on anticipated need.</p>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <h2>Positioning:</h2>
+            <p>I like Cheetos!</p>
               <br>
               <br>
               <br>
@@ -101,7 +63,12 @@
         </div>
         <div class="8u mobileUI-main-content">
           <section>
-            <p> <a class="first"><img src={{ url_for('static', filename='911_neighborhoods.png') }} width="400" ></a></p>
+            <p> <a class="first"><img src={{ url_for('static', filename='data_and_model.png') }} width="500" ></a></p>
+            <br>
+            <p> <a class="first"><img src={{ url_for('static', filename='seattle_911_zones2.png') }} width="500" ></a></p>
+            <br>
+            <br>
+            <p> <a class="first"><img src={{ url_for('static', filename='structure.png') }} width="450" ></a></p>
           </div>
       </div>
     </div>
