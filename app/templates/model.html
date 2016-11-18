@@ -23,7 +23,6 @@
         <div class="12u" id="logo" style="height: 82px">
           <!-- Logo -->
           <h1><a href="#" class="mobileUI-site-name"> Rapid Rescue</a></h1>
-
         </div>
       </div>
       <div class="row" style="padding: 0px 0px 0px 0px">
@@ -48,12 +47,18 @@
       <div class="row">
         <div class="4u">
           <section>
+            <b>
+            <h1>Using Data Science to achieve a Rapid Rescue</h1>
+            </b>
             <br>
             <h2>Prediction and Allocation:</h2>
-            <p> The machine learning algorithm Poisson regression is used to predict the number of expected medical emergency responses in each zone of the city during a given period. The model considers historical trends as well as important events such as major holidays and sporting events. Note that the model is able to track with the increasing number of medical emergencies as well as seasonal trends. Once number of medical emergencies has been predicted, an allocation algorithm allocates the emergency response units to each zone based on anticipated need.</p>
-            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <p> The machine learning algorithm Poisson regression is used to predict the number of expected medical emergency responses in each zone of the city during a given period. Poisson regression is a generalized linear model used to predict counts or frequencies. The model considers historical trends as well as important events such as major holidays and sporting events. Note that the model is able to track with the increasing number of medical emergencies as well as seasonal trends. Once number of medical emergencies has been predicted, an allocation algorithm allocates the emergency response units to each zone based on anticipated need.</p>
+            <br><br><br><br><br><br><br><br>
             <h2>Positioning:</h2>
-            <p>I like Cheetos!</p>
+            <p>Once predictions have been made and units have been allocated to zones, relevant historical data is retrieved. A geographical variation of K-means clustering is used in conjunction with the allocations and historical data to determine the optimal emergency response unit placements for rapid response.</p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h2>The Skeleton:</h2>
+            <p>The data entered by the user is handed to the Poisson Model and History Retriever. The Poisson Model predicts the number of expected emergency medical responses for each zone and then passes that information to the Allocator. The Allocator distributes the units to each zone based on expected need and hands these allocations to the Clusterer. The information entered by the user is also given to the History Retriever, which retrieves relevant background information and passes it to the Clusterer. The Clusterer uses the allocations as well as the relevant historical data to calculate the optimal placements of emergency resources for rapid responses.</p>
               <br>
               <br>
               <br>

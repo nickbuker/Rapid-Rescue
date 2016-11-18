@@ -38,6 +38,10 @@
 	background-color: #FFFFFF;
 }
 
+#page-wrapper h1 {
+    padding: 0px 0px 10px 0px;
+}
+
 #page-wrapper h2 {
 	padding: 0px 0px 10px 0px;
 }

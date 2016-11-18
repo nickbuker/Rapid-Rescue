@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Rapid-Rescue</title>
+<meta charset="utf-8">
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core-desktop.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core-1200px.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core-noscript.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style-desktop.css') }}">
+
+<script src="static/stylesheets/5grid/jquery.js"></script>
+<script src="static/stylesheets/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<!--[if IE 9]><link rel="stylesheet" href="css/style-ie9.css"><![endif]-->
+</head>
+<body>
+<div id="header-wrapper">
+  <div id="header-wrapper2">
+    <header id="header" class="5grid-layout">
+      <div class="row">
+        <div class="12u" id="logo" style="height: 82px">
+          <!-- Logo -->
+          <h1><a href="#" class="mobileUI-site-name"> Rapid Rescue</a></h1>
+        </div>
+      </div>
+      <div class="row" style="padding: 0px 0px 0px 0px">
+        <div class="12u" id="menu">
+          <nav class="mobileUI-site-nav">
+            <ul>
+              <li class="current_page_item"><a href="index.html">Homepage</a></li>
+              <li><a href="model.html">About the Model</a></li>
+              <li><a href="me.html">About the Creator</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+<div id="page-wrapper">
+  <div class="5grid-layout"> </div>
+  <div class="12u" style="padding: 0px 0px 0px 10px">
+    <div class="5grid-layout">
+      <div class="row">
+        <div class="4u">
+          <section>
+            <b>
+              <br>
+              <h1>Dr. Nick Buker</h1>
+              <p>I'm a data scientist and a lover of Seattle. Before my life in data science, I did engineering work at IBM, researched compounds for manipulation of optical signals at UW, taught chemistry within the community college system, and did green chemistry consulting work. I have 4 patents and I'm passionate about learning new domains, solving complex problems, and collaborative projects. Please feel free to connect with me on <a href="https://www.linkedin.com/in/nickbuker">LinkedIn</a>. If you are interested in my work, source code can be found on<a href="https://github.com/nickbuker">GitHub</a>. I also have a <a href="http://nickbuker.tumblr.com/">blog</a> where I share some of the plots I do for fun.<p>
+            </body>
+            </ul>
+          </section>
+        </div>
+        <div class="8u mobileUI-main-content">
+          <section>
+          <p> <a class="first"><img src={{ url_for('static', filename='nick2.jpg') }} width="300" ></a></p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer-wrapper">
+  <div id="footer-content" class="5grid-layout">
+    <div class="row">
+      <div class="3u">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="5grid-layout" >
+  <div id="copyright">
+    <p>&copy; Rapid-Rescue | Design: <a target="_blank" href="http://html5templates.com/">HTML5Templates.com</a></p>
+  </div>
+</div>
+</body>
+</html>

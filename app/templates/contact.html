@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Rapid-Rescue</title>
+<meta charset="utf-8">
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core-desktop.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core-1200px.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core-noscript.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style-desktop.css') }}">
+
+<script src="static/stylesheets/5grid/jquery.js"></script>
+<script src="static/stylesheets/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<!--[if IE 9]><link rel="stylesheet" href="css/style-ie9.css"><![endif]-->
+</head>
+<body>
+<div id="header-wrapper">
+  <div id="header-wrapper2">
+    <header id="header" class="5grid-layout">
+      <div class="row">
+        <div class="12u" id="logo" style="height: 82px">
+          <!-- Logo -->
+          <h1><a href="#" class="mobileUI-site-name"> Rapid Rescue</a></h1>
+        </div>
+      </div>
+      <div class="row" style="padding: 0px 0px 0px 0px">
+        <div class="12u" id="menu">
+          <nav class="mobileUI-site-nav">
+            <ul>
+              <li class="current_page_item"><a href="index.html">Homepage</a></li>
+              <li><a href="model.html">About the Model</a></li>
+              <li><a href="me.html">About the Creator</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+<div id="page-wrapper">
+  <div class="5grid-layout"> </div>
+  <div class="12u" style="padding: 0px 0px 0px 10px">
+    <div class="5grid-layout">
+      <div class="row">
+        <div class="4u">
+          <section>
+            <b>
+            <h1>Contact the creator:</h1>
+            </b>
+            <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+            	<div class="row">
+            		<label for="name">Your name:</label><br />
+            		<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+            	</div>
+            	<div class="row">
+            		<label for="email">Your email:</label><br />
+            		<input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+            	</div>
+            	<div class="row">
+            		<label for="message">Your message:</label><br />
+            		<textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+            	</div>
+            	<input id="submit_button" type="submit" value="Send email" />
+            </form>
+              </body>
+            </ul>
+          </section>
+        </div>
+        <div class="8u mobileUI-main-content">
+          <section>
+            <p> <a class="first"><img src={{ url_for('static', filename='nick.jpg') }} width="300" ></a></p>
+            <br>
+                    </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer-wrapper">
+  <div id="footer-content" class="5grid-layout">
+    <div class="row">
+      <div class="3u">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="5grid-layout" >
+  <div id="copyright">
+    <p>&copy; Rapid-Rescue | Design: <a target="_blank" href="http://html5templates.com/">HTML5Templates.com</a></p>
+  </div>
+</div>
+</body>
+</html>
