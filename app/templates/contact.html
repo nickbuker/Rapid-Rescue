@@ -4,6 +4,16 @@
 <title>Rapid-Rescue</title>
 <meta charset="utf-8">
 
+<script type="text/javascipt"
+        src="{{ url_for('static', filename='init.js') }}">
+</script>
+<script type="text/javascript"
+        src="{{ url_for('static', filename='jquery.js') }}">
+</script>
+<script type="text/javascript"
+        src="{{ url_for('static', filename='app.js') }}">
+</script>
+
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core.css') }}" >
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core-desktop.css') }}" >
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core-1200px.css') }}" >
@@ -11,8 +21,6 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style-desktop.css') }}">
 
-<script src="static/stylesheets/5grid/jquery.js"></script>
-<script src="static/stylesheets/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
 <!--[if IE 9]><link rel="stylesheet" href="css/style-ie9.css"><![endif]-->
 </head>
 <body>

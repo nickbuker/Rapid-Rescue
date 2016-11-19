@@ -10,6 +10,7 @@ def index():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     user_data = request.data
+    print user_data
     return render_template('predict.html')
 
 @app.route('/model')

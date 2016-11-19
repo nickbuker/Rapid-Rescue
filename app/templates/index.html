@@ -4,8 +4,9 @@
 <title>Rapid-Rescue</title>
 <meta charset="utf-8">
 
-  <!-- <script type="text/javascipt"
-          src="{{ url_for('static', filename='init.js') }}"></script> -->
+  <script type="text/javascipt"
+          src="{{ url_for('static', filename='init.js') }}">
+  </script>
   <script type="text/javascript"
           src="{{ url_for('static', filename='jquery.js') }}">
   </script>
@@ -81,6 +82,7 @@
               <input type="radio" name="night" id="time_range" value="1" checked> 6pm to 6am (nighttime)<br>
               <br>
               <input type="button" id="predict" value="Predict">
+              Calculation may take a few moments.
               </form>
               <br>
               <br>
