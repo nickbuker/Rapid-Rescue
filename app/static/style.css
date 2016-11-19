@@ -22,14 +22,14 @@ body {
 
 h1 {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 24pt;
+	font-size: 16pt;
 	font-weight: bold;
 	color: #171717;
 }
 
 h2 {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16pt;
+	font-size: 14pt;
 
 	color: #171717;
 }
@@ -39,7 +39,7 @@ p, ol {
 }
 
 p {
-	padding: 0px 0px 0px 10px;
+	padding: 0px 0px 0px 0px;
 	margin-bottom: 20px;
 }
 

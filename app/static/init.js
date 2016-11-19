@@ -23,7 +23,7 @@
 	{
 		if (!this.events[name])
 			this.events[name] = new Array();
-		
+
 		this.events[name].push(f);
 	}
 
@@ -31,7 +31,7 @@
 	{
 		if (!this.isReady || !this.events[name] || this.events[name].length < 1)
 			return;
-			
+
 		for (i in this.events[name])
 			(this.events[name][i])();
 	}
@@ -44,7 +44,7 @@
 	_5gridC.prototype.readyCheck = function()
 	{
 		var x = this;
-		
+
 		window.setTimeout(function() {
 			if (x.isReady)
 				x.trigger('ready');
@@ -101,7 +101,7 @@
 
 		// Custom opts
 			if (y.length > 1)
-			{ 
+			{
 				x = y[1].split('&');
 				for (v in x)
 				{
@@ -109,15 +109,15 @@
 					_opts[w[0]] = w[1];
 				}
 			}
-	
+
 	// Debug options
 		if (_opts['debug.noExtLoad'] == 1)
 			_headQueue.pushE_5grid = function(s) { };
-	
+
 	// Determine viewing modes
 		_desktop = _mobile = _fluid = _1000px = _1200px = _mobileOnly = false;
 		v = _opts['use'].split(',');
-		
+
 		if (jQuery.inArray('fluid', v) > -1)
 			_fluid = true;
 		if (jQuery.inArray('desktop', v) > -1)
@@ -178,7 +178,7 @@
 			_5grid.isMobile = true;
 			_head.prepend('<meta name="viewport" content="initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0;" />');
 			_headQueue.pushE_5grid(_baseURL + '5grid/core-mobile.css');
-			
+
 			if (_opts['mobileUI'] == 1)
 			{
 				_opts['mobileUI.force'] = 1;
@@ -214,14 +214,14 @@
 				_5grid.isDesktop = true;
 				_headQueue.pushE_5grid(_baseURL + '5grid/core-desktop.css');
 				_headQueue.pushE_5grid(_baseURL + _opts['prefix'] + '-desktop.css');
-			
+
 				// 1200px
 				if (ww >= 1200)
 				{
 					_5grid.is1200px = true;
 					_head.prepend('<meta name="viewport" content="width=1280" />');
 					_headQueue.pushE_5grid(_baseURL + '5grid/core-1200px.css');
-					
+
 					// Load 1200px stylesheet if 1200px was explicitly enabled
 					if (_1200px)
 						_headQueue.pushE_5grid(_baseURL + _opts['prefix'] + '-1200px.css');
@@ -274,20 +274,20 @@
 		jQuery(function() {
 			var body = jQuery('body'), speed = 0, easing = 'swing';
 			body.wrapInner('<div id="mobileUI-site-wrapper" />');
-		
+
 			// Move primary content
 				var main_content = jQuery('.mobileUI-main-content'), main_content_target = jQuery('.mobileUI-main-content-target');
-				
+
 				if (main_content.length > 0)
 					if (main_content_target.length > 0)
 						main_content.prependTo(main_content_target);
 					else
 						main_content.prependTo(main_content.parent());
-		
+
 			// Get site name, nav options
 				var x = jQuery('.mobileUI-site-name'), site_name = (x.length > 0 ? x.html() : '');
 				var site_nav_options = new Array();
-				
+
 				jQuery('.mobileUI-site-nav a').each(function() {
 					var t = jQuery(this), indent;
 					indent = Math.max(0,t.parents('li').length - 1);
@@ -343,7 +343,7 @@
 							e.preventDefault();
 							body.trigger('5grid_toggleNav');
 						});
-						
+
 				// Mobile Site Bar
 					mobileUI_site_titlebar
 						.css('position', (_opts['mobileUI.titleBarFixed'] == 1 ? 'fixed' : 'absolute'))
@@ -355,7 +355,7 @@
 						.css('line-height', _opts['mobileUI.titleBarHeight'] + 'px')
 						.disableSelection_5grid()
 						.prependTo(body);
-						
+
 				// Mobile Site Nav
 					mobileUI_site_nav
 						.css('position', 'fixed')
@@ -371,7 +371,7 @@
 						.click(function(e) {
 							e.stopPropagation();
 						});
-						
+
 					mobileUI_site_nav.find('a')
 						.click(function(e) {
 							e.preventDefault();
@@ -398,7 +398,7 @@
 					mobileUI_site_nav.isOpen_5grid = false;
 
 				// Body
-					body	
+					body
 						.css('overflow', (_isTouch ? 'hidden' : 'visible'))
 						.bind('5grid_toggleNav', function() {
 							if (mobileUI_site_nav.isOpen_5grid)
@@ -443,14 +443,14 @@
 								mobileUI_site_nav.hide();
 								_5grid.trigger('mobileUINavclose');
 								_isLocked = false;
-								
+
 								if (url)
 									window.setTimeout(function() {
 										window.location.href = url;
 									}, 150);
 							});
 						});
-				
+
 					// Window
 						_window
 							.bind('orientationchange', function(e) {
@@ -461,10 +461,10 @@
 								}
 								_5grid.trigger('orientationChange');
 							});
-				
+
 			// Remove mobileUI-hide elements
 				jQuery('.mobileUI-hide').remove();
-				
+
 			// Remove address bar
 				if (_opts['mobileUI.hideAddressBar'] == 1 && _window.scrollTop() == 0)
 					window.scrollTo(0, 1);

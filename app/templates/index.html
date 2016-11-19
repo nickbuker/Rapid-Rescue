@@ -4,6 +4,15 @@
 <title>Rapid-Rescue</title>
 <meta charset="utf-8">
 
+  <!-- <script type="text/javascipt"
+          src="{{ url_for('static', filename='init.js') }}"></script> -->
+  <script type="text/javascript"
+          src="{{ url_for('static', filename='jquery.js') }}">
+  </script>
+  <script type="text/javascript"
+          src="{{ url_for('static', filename='app.js') }}">
+  </script>
+
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core.css') }}" >
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core-desktop.css') }}" >
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/5grid/core-1200px.css') }}" >
@@ -11,8 +20,7 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style-desktop.css') }}">
 
-<script src="static/stylesheets/5grid/jquery.js"></script>
-<script src="static/stylesheets/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<!-- <script src="jquery.js"></script> -->
 <!--[if IE 9]><link rel="stylesheet" href="css/style-ie9.css"><![endif]-->
 </head>
 <body>
@@ -30,10 +38,10 @@
         <div class="12u" id="menu">
           <nav class="mobileUI-site-nav">
             <ul>
-              <li class="current_page_item"><a href="index.html">Homepage</a></li>
-              <li><a href="model.html">About the Model</a></li>
-              <li><a href="me.html">About the Creator</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li class="current_page_item"><a href="/">Homepage</a></li>
+              <li><a href="model">About the Model</a></li>
+              <li><a href="me">About the Creator</a></li>
+              <li><a href="contact">Contact</a></li>
               </ul>
           </nav>
         </div>
@@ -53,39 +61,30 @@
                   <br>
                     Please enter the following information.  The model will predict the number of expected emergency responses from historical trends. Using this information, it will determine the optimal placements of response units.
                 </p>
-             <br>
-              <form>
-                <br>
+              <form action="{{ url_for('predict') }}" method="post">
                 Date for prediction:<br>
-                <input type="date" name="date_input" max="2020-12-31" min="2010-01-01">
+                <input type="date" name="date_input" id="date_input" max="2020-12-31" min="2010-01-01">
+              <br>
+              <br>
+              Quantity of response units (between 1 and 100):<br>
+              <input type="number" name="quantity" id="num_units" min="1" max="100">
+              <br>
+              <br>
+              Is there a home game?<br>
+              <input type="radio" name="game" id="mariners" value="mariners" checked> Mariners<br>
+              <input type="radio" name="game" id="seahawks" value="seahawks" checked> Seahawks<br>
+              <input type="radio" name="game" id="sounder" value="sounders" checked> Sounders<br>
+              <input type="radio" name="game" id="no_game" value="no_game" checked> No Home Game<br>
+              <br>
+              Time range for prediction:<br>
+              <input type="radio" name="night" id="time_range" value="0" checked> 6am to 6pm (daytime)<br>
+              <input type="radio" name="night" id="time_range" value="1" checked> 6pm to 6am (nighttime)<br>
+              <br>
+              <input type="button" id="predict" value="Predict">
               </form>
               <br>
-              <form>
-                Quantity of response units (between 1 and 100):<br>
-              <input type="number" name="quantity" min="1" max="100">
-              </form>
-              <br>
-              <form>
-                Is there a home game?<br>
-              <input type="radio" name="game" value="mariners" checked> Mariners<br>
-              <input type="radio" name="game" value="seahawks" checked> Seahawks<br>
-              <input type="radio" name="game" value="sounders" checked> Sounders<br>
-              <input type="radio" name="game" value="no_game" checked> No Home Game<br>
-              <br>
-              <form>
-                Time range for prediction:<br>
-              <input type="radio" name="night" value="0" checked> 6am to 6pm (daytime)<br>
-              <input type="radio" name="night" value="1" checked> 6pm to 6am (nighttime)<br>
-              </form>
-             <br>
-              <body>
-
-              <input type="button" onclick="" value="Predict">
               <br>
               <br>
-              <br>
-              </body>
-            </ul>
           </section>
         </div>
         <div class="8u mobileUI-main-content">

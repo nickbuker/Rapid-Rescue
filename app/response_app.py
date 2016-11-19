@@ -1,27 +1,28 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # home page
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html', title='Rapid Rescue')
+    return render_template('index.html')
 
 # home page
-@app.route('/predict')
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
-    pass
+    user_data = request.data
+    return render_template('predict.html')
 
 @app.route('/model')
 def model():
-    return render_template('model.html', title='Rapid Rescue')
+    return render_template('model.html')
 
 @app.route('/me')
 def me():
-    return render_template('me.html', title='Rapid Rescue')
+    return render_template('me.html')
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html', title='Rapid Rescue')
+    return render_template('contact.html')
 
 # Be careful with debug!
 if __name__ == '__main__':
