@@ -25,8 +25,9 @@ class PoissonModel(object):
         self.poisson_model = Poisson(self.y, self.X).fit()
 
     def predict(self, query):
-        # Feed query DataFrame to model
+        # Scale data and feed query DataFrame to model
         self.query = query
+        self.query = scaler.transform(self.query)
         self.preds = self.poisson_model.predict(query)
         self.zones = ['zone1', 'zone2', 'zone3', 'zone4',
                       'zone5', 'zone6', 'zone7']

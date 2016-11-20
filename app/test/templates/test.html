@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>show hide test</title>
+</head>
+
+<script type="text/javascript"
+        src="{{ url_for('static', filename='app.js') }}">
+</script>
+
+<body>
+  <div id="data_entry">
+    <form>
+      Enter date:<br>
+      <input type="date" name="bday" max="1979-12-31"><br><br>
+      <button type="button" id="predict">Predict</button>
+    </form>
+</body>
+</html>
