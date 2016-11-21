@@ -5,23 +5,25 @@
   <meta charset="utf-8">
   <title>show hide test</title>
 </head>
+<!-- Fix order of import on main app -->
+<script type="text/javascript"
+        src="{{ url_for('static', filename='jquery.js') }}">
+</script>
 
 <script type="text/javascript"
         src="{{ url_for('static', filename='app.js') }}">
 </script>
-<script type="text/javascript"
-        src="{{ url_for('static', filename='jquery.js') }}">
-</script>
+
 
 <body>
   <div id="data_entry">
     <form>
       Enter date:<br>
-      <input type="date" name="bday" max="1979-12-31"><br><br>
+      <input type="date" name="bday" id="date_input" max="2020-12-31"><br><br>
       <button type="button" id="predict">Predict</button>
     </form>
   </div>
-  <div id="data_return">
+  <div id="data_return" hidden>
     <form>
       Cool story bro!<br>
       <button type="button" id="return">Make Another Prediction</button>

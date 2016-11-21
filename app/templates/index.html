@@ -57,41 +57,55 @@
       <div class="row">
         <div class="4u">
           <section>
-            <h2>Make a Prediction:</h2>
-                <p>
-                  <br>
-                    Please enter the following information.  The model will predict the number of expected emergency responses from historical trends. Using this information, it will determine the optimal placements of response units.
-                </p>
-              <form action="{{ url_for('predict') }}" method="post">
-                Date for prediction:<br>
-                <input type="date" name="date_input" id="date_input" max="2020-12-31" min="2010-01-01">
-              <br>
-              <br>
-              Quantity of response units (between 1 and 100):<br>
-              <input type="number" name="quantity" id="num_units" min="1" max="100">
-              <br>
-              <br>
-              Is there a home game?<br>
-              <input type="radio" name="game" id="mariners" value="mariners" checked> Mariners<br>
-              <input type="radio" name="game" id="seahawks" value="seahawks" checked> Seahawks<br>
-              <input type="radio" name="game" id="sounder" value="sounders" checked> Sounders<br>
-              <input type="radio" name="game" id="no_game" value="no_game" checked> No Home Game<br>
-              <br>
-              Time range for prediction:<br>
-              <input type="radio" name="night" id="time_range" value="0" checked> 6am to 6pm (daytime)<br>
-              <input type="radio" name="night" id="time_range" value="1" checked> 6pm to 6am (nighttime)<br>
-              <br>
-              <input type="button" id="predict" value="Predict">
-              Calculation may take a few moments.
+            <div id="data_entry">
+              <h2>Make a Prediction:</h2>
+                  <p>
+                    <br>
+                      Please enter the following information.  The model will predict the number of expected emergency responses from historical trends. Using this information, it will determine the optimal placements of response units.
+                  </p>
+                <form action="{{ url_for('predict') }}" method="post">
+                  Date for prediction (between 01/01/2010 and 12/31/2020):<br>
+                  <input type="date" name="date_input" id="date_input" max="2020-12-31" min="2010-01-01">
+                <br>
+                <br>
+                Quantity of response units (between 1 and 100):<br>
+                <input type="number" name="quantity" id="num_units" min="1" max="100">
+                <br>
+                <br>
+                Is there a home game?<br>
+                <input type="radio" name="game" id="mariners" value="mariners" checked> Mariners<br>
+                <input type="radio" name="game" id="seahawks" value="seahawks" checked> Seahawks<br>
+                <input type="radio" name="game" id="sounder" value="sounders" checked> Sounders<br>
+                <input type="radio" name="game" id="no_game" value="no_game" checked> No Home Game<br>
+                <br>
+                Time range for prediction:<br>
+                <input type="radio" name="night" id="time_range" value="0" checked> 6am to 6pm (daytime)<br>
+                <input type="radio" name="night" id="time_range" value="1" checked> 6pm to 6am (nighttime)<br>
+                <br>
+                <input type="button" id="predict" value="Predict">
+                Calculation may take a few moments.
+                </form>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div id="data_return" hidden>
+              <h2>Optimal Unit Placements:</h2>
+              <form>
+                  <button type="button" id="return">Return</button> Make Another Prediction
               </form>
-              <br>
-              <br>
-              <br>
+              <span id="locs_table"></span>
+            </div>
           </section>
         </div>
         <div class="8u mobileUI-main-content">
           <section>
-            <p> <a class="first"><img src={{ url_for('static', filename='911_neighborhoods.png') }} width="400" ></a></p>
+            <div id="plot_entry">
+              <p> <a class="first"><img src={{ url_for('static', filename='911_neighborhoods.png') }} width="400" ></a></p>
+            </div>
+            <div id="plot_return" hidden>
+              <p> <a class="first"><img src={{ url_for('static', filename='seattle_911_pred.png') }} width="500" ></a></p>
+            </div>
           </div>
       </div>
     </div>

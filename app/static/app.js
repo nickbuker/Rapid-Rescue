@@ -9,23 +9,35 @@ let get_input = function() {
             'time_range': parseInt(d)}
 };
 
-let send_input_json = function(coefficients) {
+let send_input_json = function(query) {
     $.ajax({
         url: '/predict',
         contentType: "application/json; charset=utf-8",
         type: 'POST',
         success: function (data) {
-          // $('img').hide()
-          // $('newimg').show()
+          $("#data_return").show();
+          $("#data_entry").hide();
+          $("#plot_return").show();
+          $("#plot_entry").hide();
+          display_table(data)
             },
-        data: JSON.stringify(coefficients)
+        data: JSON.stringify(query)
     });
+};
+
+let display_table = function(data) {
+  $("span#locs_table").html(data.table)
 };
 
 $(document).ready(function() {
     $("input#predict").click(function() {
         let coefficients = get_input();
         send_input_json(coefficients);
-    })
-
-})
+    });
+    $("#return").click(function(){
+      $("#data_entry").show();
+      $("#data_return").hide();
+      $("#plot_entry").show();
+      $("#plot_return").hide();
+    });
+});
