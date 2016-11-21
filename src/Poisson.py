@@ -110,8 +110,8 @@ class PoissonModel(object):
         # Scale data and feed query DataFrame to model
         self.query = query
         self.X_test = self.query_to_X(self.query)
-        self.X_test = self.scaler.transform(self.X_test)
-        self.preds = self.poisson_model.predict(self.X_test)
+        self.X_scale = self.scaler.transform(self.X_test)
+        self.preds = self.poisson_model.predict(self.X_scale)
         self.zones = ['zone1', 'zone2', 'zone3', 'zone4',
                       'zone5', 'zone6', 'zone7']
         self.results = zip(self.zones, self.preds)
