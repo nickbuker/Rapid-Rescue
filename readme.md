@@ -4,12 +4,12 @@
 #### Figure 1: Count of Seattle 911 responses by day city-wide and Poisson regression model predictions.
 <br>
 
-<img src="images/seattle_911_zones2.png" width="600">
+<img src="images/seattle_911_pred.png" width="600">
 #### Figure 2: Zones assigned for modeling purposes.
 <br>
 
 <img src="images/structure.png" width="600">
-#### Figure 3: User Input is handed to the Poisson Model and History Retriever. The Allocator uses predictions from the Poisson Model to allocate units to each zone. The Clusterer determines optimal unit locations based upon information from the Allocator and the relevant historical data from the History Retriever. 
+#### Figure 3: User Input is handed to the Poisson Model and History Retriever. The Allocator uses predictions from the Poisson Model to allocate units to each zone. The Clusterer determines optimal unit locations based upon information from the Allocator and the relevant historical data from the History Retriever.
 <br>
 
 <img src="images/count_by_day_zones.png" width="800">
