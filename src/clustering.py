@@ -15,6 +15,11 @@ def clusterer(X, k=5, max_iter=1000):
     clusters = dict mapping centoids to observations
     """
 
+    if k == 0:
+        centroids = []
+        clusters = {}
+        return centroids, clusters
+
     # Zip data latitude and longitude into tuples for Vincenty distance
     lats = [lat for lat in X.Latitude]
     longs = [long_ for long_ in X.Longitude]
