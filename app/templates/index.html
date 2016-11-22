@@ -63,13 +63,13 @@
                     <br>
                       Please enter the following information.  The model will predict the number of expected emergency responses from historical trends. Using this information, it will determine the optimal placements of response units.
                   </p>
-                <form action="{{ url_for('predict') }}" method="post">
+                <form action="{{ url_for('predict') }}" method="post" id="myform">
                   Date for prediction (between 01/01/2010 and 12/31/2020):<br>
                   <input type="date" name="date_input" id="date_input" max="2020-12-31" min="2010-01-01">
                 <br>
                 <br>
                 Quantity of response units (between 1 and 100):<br>
-                <input type="number" name="quantity" id="num_units" min="1" max="100">
+                <input type="number" name="num_units" id="num_units" min="1" max="100">
                 <br>
                 <br>
                 Is there a home game?<br>
