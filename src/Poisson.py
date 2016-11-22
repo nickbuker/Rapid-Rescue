@@ -79,7 +79,7 @@ class PoissonModel(object):
         if self.query['home_game'] == 'mariners':
             self.X_test['mariners_home'] = 1
         if self.query['home_game'] == 'seahawks':
-            self.X_test['seahawks_homes'] = 1
+            self.X_test['seahawks_home'] = 1
         if self.query['home_game'] == 'sounders':
             self.X_test['sounders_home'] = 1
 
