@@ -1,15 +1,26 @@
 let get_input = function() {
-    let a = $("input#date_input").val()
-    let b = $("input#num_units").val()
-    let c = $("input[name=game]:checked").val()
-    let d = $("input[name=night]:checked").val()
-    return {'date_input': a,
-            'num_units': parseInt(b),
-            'home_game': c,
-            'time_range': parseInt(d)}
+  let a = $("input#date_input").val()
+  let b = $("input#num_units").val()
+  let c = $("input[name=game]:checked").val()
+  let d = $("input[name=night]:checked").val()
+  return {'date_input': a,
+          'num_units': parseInt(b),
+          'home_game': c,
+          'time_range': parseInt(d)}
+};
+
+let validate_form = function(imput_a, imput_b) {
+  if ((imput_a == "") || (isNaN(imput_b))) {
+    return false
+  }
+  else {
+    return true
+  }
 };
 
 let send_input_json = function(query) {
+  let valid = validate_form(query.date_input, query.num_units)
+  if (valid == true) {
     $.ajax({
         url: '/predict',
         contentType: "application/json; charset=utf-8",
@@ -22,7 +33,10 @@ let send_input_json = function(query) {
           display_table(data)
             },
         data: JSON.stringify(query)
-    });
+  })}
+  if (valid == false) {
+    alert("Date and Quantity fields must be filled.")
+  }
 };
 
 let display_table = function(data) {

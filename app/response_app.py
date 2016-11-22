@@ -120,7 +120,6 @@ def _make_plot(df, centroid_df, user_data):
     plt.title('Seattle 911 Responses by Zone', fontsize=36, fontweight='bold')
     plt.legend(['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4', 'Zone 5', 'Zone 6', 'Zone 7', 'Units'], fontsize=18)
     plt.savefig('../app/static/seattle_911_pred_live.png')
-    print "plot function fired"
 
 
 # Be careful with debug!
