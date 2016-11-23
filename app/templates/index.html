@@ -101,10 +101,11 @@
         <div class="8u mobileUI-main-content">
           <section>
             <div id="plot_entry">
-              <p> <a class="first"><img src={{ url_for('static', filename='911_neighborhoods.png') }} width="400" ></a></p>
+              <p> <a class="first"><img id='map' src={{ url_for('static', filename='911_neighborhoods.png') }} width="500" ></a></p>
             </div>
             <div id="plot_return" hidden>
-              <p> <a class="first"><img src={{ url_for('static', filename='seattle_911_pred_live.png') }} width="550" ></a></p>
+              <!-- <p> <a class="first"><img src={{ url_for('static', filename='zseattle1479859727.09.png') }} width="550" ></a></p> -->
+            <span id="locs_plot"></span>
             </div>
           </div>
       </div>

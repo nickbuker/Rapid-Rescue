@@ -28,9 +28,9 @@ let send_input_json = function(query) {
         success: function (data) {
           $("#data_return").show();
           $("#data_entry").hide();
-          $("#plot_return").show();
-          $("#plot_entry").hide();
-          display_table(data)
+          // $("#plot_return").show();
+          // $("#plot_entry").hide();
+          display_stuff(data)
             },
         data: JSON.stringify(query)
   })}
@@ -39,8 +39,9 @@ let send_input_json = function(query) {
   }
 };
 
-let display_table = function(data) {
+let display_stuff = function(data) {
   $("span#locs_table").html(data.table)
+  $("img#map").attr('src', '/static/'+ data.img_name)
 };
 
 $(document).ready(function() {
