@@ -4,7 +4,7 @@ from geopy.distance import vincenty
 from collections import defaultdict
 
 
-def clusterer(X, k=5, max_iter=1000):
+def clusterer(X, k=5, max_iter=1000, limit=True):
     """
     Inputs:
     X = 2 x m dataframe of latitude and longitude (float)
@@ -19,6 +19,10 @@ def clusterer(X, k=5, max_iter=1000):
         centroids = []
         clusters = {}
         return centroids, clusters
+
+    # Limit size of history for faster clustering
+    if limit ==  True and len(X) > 500:
+        X = X.sample(n=500)
 
     # Zip data latitude and longitude into tuples for Vincenty distance
     lats = [lat for lat in X.Latitude]
