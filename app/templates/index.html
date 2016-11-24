@@ -21,7 +21,6 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" >
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style-desktop.css') }}">
 
-<!-- <script src="jquery.js"></script> -->
 <!--[if IE 9]><link rel="stylesheet" href="css/style-ie9.css"><![endif]-->
 </head>
 <body>
@@ -61,6 +60,7 @@
               <h2>Make a Prediction:</h2>
                   <p>
                     <br>
+                      This is a lite version of the model designed to return results to the users in seconds.
                       Please enter the following information.  The model will predict the number of expected emergency responses from historical trends. Using this information, it will determine the optimal placements of response units.
                   </p>
                 <form action="{{ url_for('predict') }}" method="post" id="myform">
@@ -82,8 +82,13 @@
                 <input type="radio" name="night" id="time_range" value="0" checked> 6am to 6pm (daytime)<br>
                 <input type="radio" name="night" id="time_range" value="1" checked> 6pm to 6am (nighttime)<br>
                 <br>
-                <input type="button" id="predict" value="Predict">
-                Calculation may take a few moments.
+                <div id="pred_button">
+                  <input type="button" id="predict" value="Predict">
+                  Calculation may take a few moments.
+                </div>
+                <div id="calculating" hidden>
+                  <h2><font color="red">Calculating...</font></h2>
+                </div>
                 </form>
                 <br>
                 <br>
@@ -102,10 +107,6 @@
           <section>
             <div id="plot_entry">
               <p> <a class="first"><img id='map' src={{ url_for('static', filename='911_neighborhoods.png') }} width="500" ></a></p>
-            </div>
-            <div id="plot_return" hidden>
-              <!-- <p> <a class="first"><img src={{ url_for('static', filename='zseattle1479859727.09.png') }} width="550" ></a></p> -->
-            <span id="locs_plot"></span>
             </div>
           </div>
       </div>

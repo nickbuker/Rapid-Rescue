@@ -14,6 +14,8 @@ let validate_form = function(imput_a, imput_b) {
     return false
   }
   else {
+    $("#calculating").show();
+    $("#pred_button").hide();
     return true
   }
 };
@@ -28,8 +30,7 @@ let send_input_json = function(query) {
         success: function (data) {
           $("#data_return").show();
           $("#data_entry").hide();
-          // $("#plot_return").show();
-          // $("#plot_entry").hide();
+          $("#calculating").hide();
           display_stuff(data)
             },
         data: JSON.stringify(query)
@@ -51,8 +52,8 @@ $(document).ready(function() {
     });
     $("#return").click(function(){
       $("#data_entry").show();
+      $("#pred_button").show();
       $("#data_return").hide();
       $("#plot_entry").show();
-      $("#plot_return").hide();
     });
 });
