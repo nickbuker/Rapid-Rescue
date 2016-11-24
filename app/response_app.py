@@ -11,6 +11,8 @@ import time
 import pandas as pd
 import matplotlib.pyplot as plt
 import multiprocessing
+import os
+import glob
 
 
 app = Flask(__name__)
@@ -36,6 +38,8 @@ def predict():
     # Get user data
     user_data = request.data
     user_data = literal_eval(user_data)
+    # Delete old images
+    _purge_old_images()
     # Make predicton with Poisson model and allocate resources to zones
     preds = poisson_model.predict(user_data)
     alloc = allocator(user_data["num_units"], preds)
@@ -61,6 +65,14 @@ def me():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
+
+def _purge_old_images():
+    # Keep old images from building up
+    for f in glob.glob('../app/static/zztempic*.png'):
+        # Check if image over 120 seconds old
+        if time.time() - int(f[22:32]) > 120:
+            os.remove(f)
 
 
 def _make_centroid_df(centroids):
@@ -151,8 +163,8 @@ def _make_plot(df1, df2, df3, df4, df5, df6, df7, centroid_df, user_data):
     plt.title('Seattle 911 Responses by Zone', fontsize=24, fontweight='bold')
     plt.legend(['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4', 'Zone 5', 'Zone 6', 'Zone 7', 'Units'], fontsize=12)
     ts = str(time.time())
-    plt.savefig('../app/static/zseattle'+ ts +'.png')
-    return 'zseattle'+ ts +'.png'
+    plt.savefig('../app/static/zztempic'+ ts +'.png')
+    return 'zztempic'+ ts +'.png'
 
 
 # Be careful with debug!
