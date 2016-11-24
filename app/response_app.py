@@ -62,6 +62,7 @@ def contact():
 
 
 def _make_centroid_df(centroids):
+    # Convert list of tuples into DataFrame
     centroid_df = pd.DataFrame(centroids)
     centroid_df.columns = ['Latitude', 'Longitude']
     centroid_df.index += 1
@@ -69,6 +70,7 @@ def _make_centroid_df(centroids):
 
 
 def _make_table(centroid_df):
+    # Generate html code for table from centroid_df
     table = centroid_df.to_html()
     table.replace("\n", "")
     return table
@@ -83,7 +85,6 @@ def _get_history(df, query):
         seahawks = 1
     if query['home_game'] == 'sounders':
         sounders = 1
-
     # Create History DataFrames for each zone
     df1 = hist_retriever(df, mariners, seahawks, sounders, query['date_input'],
                              query['time_range'], 'zone1')
@@ -122,25 +123,25 @@ def _make_plot(df1, df2, df3, df4, df5, df6, df7, centroid_df, user_data):
     plt.figure(figsize=(8.5,12.5))
     # Limit points for speed of plotting
     if len(df1) > 1000:
-        df1 = df1.sample(n=1000)
+        df1 = df1.sample(n=1000, random_state=42)
     plt.scatter(x=df1.Longitude, y=df1.Latitude, color='m', s=15, alpha=0.34)
     if len(df2) > 1000:
-        df2 = df2.sample(n=1000)
+        df2 = df2.sample(n=1000, random_state=42)
     plt.scatter(x=df2.Longitude, y=df2.Latitude, color='orange', s=15, alpha=0.34)
     if len(df3) > 1000:
-        df3 = df3.sample(n=1000)
+        df3 = df3.sample(n=1000, random_state=42)
     plt.scatter(x=df3.Longitude, y=df3.Latitude, color='#38d159', s=15, alpha=0.34)
     if len(df4) > 1000:
-        df4 = df4.sample(n=1000)
+        df4 = df4.sample(n=1000, random_state=42)
     plt.scatter(x=df4.Longitude, y=df4.Latitude, color='b', s=15, alpha=0.34)
     if len(df5) > 1000:
-        df5 = df5.sample(n=1000)
+        df5 = df5.sample(n=1000, random_state=42)
     plt.scatter(x=df5.Longitude, y=df5.Latitude, color='r', s=15, alpha=0.34)
     if len(df6) > 1000:
-        df6 = df6.sample(n=1000)
+        df6 = df6.sample(n=1000, random_state=42)
     plt.scatter(x=df6.Longitude, y=df6.Latitude, color='#53cfd6', s=15, alpha=0.34)
     if len(df7) > 1000:
-        df7 = df7.sample(n=1000)
+        df7 = df7.sample(n=1000, random_state=42)
     plt.scatter(x=df7.Longitude, y=df7.Latitude, color='#868591', s=15, alpha=0.34)
     plt.scatter(centroid_df.Longitude, centroid_df.Latitude, s=150, color='k')
     plt.xlabel('Longitude', fontsize=20, fontweight='bold')
@@ -149,7 +150,6 @@ def _make_plot(df1, df2, df3, df4, df5, df6, df7, centroid_df, user_data):
     plt.legend(['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4', 'Zone 5', 'Zone 6', 'Zone 7', 'Units'], fontsize=12)
     ts = str(time.time())
     plt.savefig('../app/static/zseattle'+ ts +'.png')
-    print 'zseattle'+ ts +'.png'
     return 'zseattle'+ ts +'.png'
 
 
