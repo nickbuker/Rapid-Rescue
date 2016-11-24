@@ -59,17 +59,16 @@
             <div id="data_entry">
               <h2>Make a Prediction:</h2>
                   <p>
-                    <br>
-                      This is a lite version of the model designed to return results to the users in seconds.
-                      Please enter the following information.  The model will predict the number of expected emergency responses from historical trends. Using this information, it will determine the optimal placements of response units.
+                    This is a lite version of the model designed to return results to the users in seconds. The full model is more precise and can handle up to 100 units, but takes minutes to return results.<br><br>
+                    Please enter the following information.  The model will predict the number of expected emergency responses from historical trends. Using this information, it will determine the optimal placements of response units for rapid responses.
                   </p>
                 <form action="{{ url_for('predict') }}" method="post" id="myform">
                   Date for prediction (between 01/01/2010 and 12/31/2020):<br>
                   <input type="date" name="date_input" id="date_input" max="2020-12-31" min="2010-01-01">
                 <br>
                 <br>
-                Quantity of response units (between 1 and 40):<br>
-                <input type="number" name="num_units" id="num_units" min="1" max="40">
+                Quantity of response units (between 1 and 30):<br>
+                <input type="number" name="num_units" id="num_units" min="1" max="30">
                 <br>
                 <br>
                 Is there a home game?<br>
@@ -87,7 +86,7 @@
                   Calculation may take a few moments.
                 </div>
                 <div id="calculating" hidden>
-                  <h2><font color="red">Calculating...</font></h2>
+                  <h2><font color="red">Calculating results...</font></h2>
                 </div>
                 </form>
                 <br>

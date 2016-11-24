@@ -14,8 +14,6 @@ let validate_form = function(imput_a, imput_b) {
     return false
   }
   else {
-    $("#calculating").show();
-    $("#pred_button").hide();
     return true
   }
 };
@@ -23,6 +21,8 @@ let validate_form = function(imput_a, imput_b) {
 let send_input_json = function(query) {
   let valid = validate_form(query.date_input, query.num_units)
   if (valid == true) {
+    $("#calculating").show();
+    $("#pred_button").hide();
     $.ajax({
         url: '/predict',
         contentType: "application/json; charset=utf-8",
