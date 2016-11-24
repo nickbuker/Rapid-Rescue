@@ -5,7 +5,7 @@ from geopy.distance import vincenty
 from collections import defaultdict
 
 
-def clusterer(X, k=5, max_iter=1000, limit=False):
+def clusterer(data, max_iter=1000, limit=False):
     """
     Inputs:
     X = 2 x m dataframe of latitude and longitude (float)
@@ -15,7 +15,8 @@ def clusterer(X, k=5, max_iter=1000, limit=False):
     centoids = dataframe latitude and longitude of centroids (float)
     clusters = dict mapping centoids to observations
     """
-
+    X =  data[0]
+    k = data[1]
     rand_state = 42
     # Loop for checking lost centroids due key duplications in dict
     while True:

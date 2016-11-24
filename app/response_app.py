@@ -10,6 +10,7 @@ from ast import literal_eval
 import time
 import pandas as pd
 import matplotlib.pyplot as plt
+import multiprocessing
 
 
 app = Flask(__name__)
@@ -18,6 +19,7 @@ app = Flask(__name__)
 # Set up some data
 df = pd.read_csv('../data/seattle_911_prepped_no_out.csv', low_memory=False)
 df.drop(['Unnamed: 0'], axis=1, inplace=True)
+cores = multiprocessing.cpu_count()
 # Load pickled Poisson model
 with open('PoissonModel.pkl', 'rb') as pkl_object:
     poisson_model = pickle.load(pkl_object)
@@ -104,17 +106,17 @@ def _get_history(df, query):
 
 
 def get_centroids(df1, df2, df3, df4, df5, df6, df7, alloc):
-    # Find centroids with clusterer
-    centroids1, clusters1 = clusterer(df1, int(alloc['zone1']))
-    centroids2, clusters2 = clusterer(df2, int(alloc['zone2']))
-    centroids3, clusters3 = clusterer(df3, int(alloc['zone3']))
-    centroids4, clusters4 = clusterer(df4, int(alloc['zone4']))
-    centroids5, clusters5 = clusterer(df5, int(alloc['zone5']))
-    centroids6, clusters6 = clusterer(df6, int(alloc['zone6']))
-    centroids7, clusters7 = clusterer(df7, int(alloc['zone7']))
-    # Combine centroids and create DataFrame of locations
-    centroids = list(chain(centroids1, centroids2, centroids3, centroids4,
-                           centroids5, centroids6, centroids7))
+    # Create pool object for multiprocessing
+    pool = multiprocessing.Pool(cores)
+    # Generate iterable arguments for pool
+    datas = [[df1, int(alloc['zone1'])], [df2, int(alloc['zone2'])], [df3, int(alloc['zone3'])],
+             [df4, int(alloc['zone4'])], [df5, int(alloc['zone5'])], [df6, int(alloc['zone6'])],
+             [df7, int(alloc['zone7'])]]
+    # Find centoids using clusterer function
+    output = pool.map(clusterer, datas)
+    centroids = list(chain(output[0][0], output[1][0], output[2][0],
+                           output[3][0], output[4][0], output[5][0],
+                           output[6][0]))
     return centroids
 
 
