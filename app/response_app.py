@@ -159,7 +159,9 @@ def _make_plot(df1, df2, df3, df4, df5, df6, df7, centroid_df, user_data):
     plt.scatter(x=df7.Longitude, y=df7.Latitude, color='#868591', s=30, alpha=0.34)
     plt.scatter(centroid_df.Longitude, centroid_df.Latitude, s=300, color='k')
     plt.xlabel('Longitude', fontsize=28, fontweight='bold')
+    plt.xticks(fontsize=20)
     plt.ylabel('Latitude', fontsize=28, fontweight='bold')
+    plt.yticks(fontsize=20)
     plt.title('Seattle 911 Responses by Zone', fontsize=36, fontweight='bold')
     plt.legend(['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4',
                 'Zone 5', 'Zone 6', 'Zone 7', 'Units'], fontsize=18)
