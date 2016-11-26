@@ -134,34 +134,35 @@ def get_centroids(df1, df2, df3, df4, df5, df6, df7, alloc):
 
 def _make_plot(df1, df2, df3, df4, df5, df6, df7, centroid_df, user_data):
     # Plot historical data against optimal unit placements
-    plt.figure(figsize=(8.5,12.5))
+    plt.figure(figsize=(16.95,25))
     # Limit points for speed of plotting
     if len(df1) > 1000:
         df1 = df1.sample(n=1000, random_state=42)
-    plt.scatter(x=df1.Longitude, y=df1.Latitude, color='m', s=15, alpha=0.34)
+    plt.scatter(x=df1.Longitude, y=df1.Latitude, color='m', s=30, alpha=0.34)
     if len(df2) > 1000:
         df2 = df2.sample(n=1000, random_state=42)
-    plt.scatter(x=df2.Longitude, y=df2.Latitude, color='orange', s=15, alpha=0.34)
+    plt.scatter(x=df2.Longitude, y=df2.Latitude, color='orange', s=30, alpha=0.34)
     if len(df3) > 1000:
         df3 = df3.sample(n=1000, random_state=42)
-    plt.scatter(x=df3.Longitude, y=df3.Latitude, color='#38d159', s=15, alpha=0.34)
+    plt.scatter(x=df3.Longitude, y=df3.Latitude, color='#38d159', s=30, alpha=0.34)
     if len(df4) > 1000:
         df4 = df4.sample(n=1000, random_state=42)
-    plt.scatter(x=df4.Longitude, y=df4.Latitude, color='b', s=15, alpha=0.34)
+    plt.scatter(x=df4.Longitude, y=df4.Latitude, color='b', s=30, alpha=0.34)
     if len(df5) > 1000:
         df5 = df5.sample(n=1000, random_state=42)
-    plt.scatter(x=df5.Longitude, y=df5.Latitude, color='r', s=15, alpha=0.34)
+    plt.scatter(x=df5.Longitude, y=df5.Latitude, color='r', s=30, alpha=0.34)
     if len(df6) > 1000:
         df6 = df6.sample(n=1000, random_state=42)
-    plt.scatter(x=df6.Longitude, y=df6.Latitude, color='#53cfd6', s=15, alpha=0.34)
+    plt.scatter(x=df6.Longitude, y=df6.Latitude, color='#53cfd6', s=30, alpha=0.34)
     if len(df7) > 1000:
         df7 = df7.sample(n=1000, random_state=42)
-    plt.scatter(x=df7.Longitude, y=df7.Latitude, color='#868591', s=15, alpha=0.34)
-    plt.scatter(centroid_df.Longitude, centroid_df.Latitude, s=150, color='k')
-    plt.xlabel('Longitude', fontsize=20, fontweight='bold')
-    plt.ylabel('Latitude', fontsize=20, fontweight='bold')
-    plt.title('Seattle 911 Responses by Zone', fontsize=24, fontweight='bold')
-    plt.legend(['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4', 'Zone 5', 'Zone 6', 'Zone 7', 'Units'], fontsize=12)
+    plt.scatter(x=df7.Longitude, y=df7.Latitude, color='#868591', s=30, alpha=0.34)
+    plt.scatter(centroid_df.Longitude, centroid_df.Latitude, s=300, color='k')
+    plt.xlabel('Longitude', fontsize=28, fontweight='bold')
+    plt.ylabel('Latitude', fontsize=28, fontweight='bold')
+    plt.title('Seattle 911 Responses by Zone', fontsize=36, fontweight='bold')
+    plt.legend(['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4',
+                'Zone 5', 'Zone 6', 'Zone 7', 'Units'], fontsize=18)
     ts = str(time.time())
     plt.savefig('../app/static/zztempic'+ ts +'.png')
     return 'zztempic'+ ts +'.png'
