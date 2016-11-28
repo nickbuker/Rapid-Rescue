@@ -29,7 +29,6 @@
 <img src="images/logos/matplotlib.png" width="120">
 <img src="images/logos/jupyter.png" width="120">
 <img src="images/logos/r.png" width="120">
-<img src="images/logos/atom.png" width="120">
 <img src="images/logos/sklearn.png" width="120">
 <img src="images/logos/statsmodels.png" width="120">
 <img src="images/logos/flask.png" width="120">
