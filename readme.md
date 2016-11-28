@@ -20,7 +20,6 @@ Once predictions have been made and units have been allocated to zones, relevant
 The data entered by the user is handed to the Poisson Model and History Retriever. The Poisson Model predicts the number of expected emergency medical responses for each zone and then passes that information to the Allocator. The Allocator distributes the units to each zone based on expected need and hands these allocations to the Clusterer. The information entered by the user is also given to the History Retriever, which retrieves relevant background information and passes it to the Clusterer. The Clusterer uses the allocations as well as the relevant historical data to calculate the optimal placements of emergency resources for rapid responses.
 <br><br>
 #### Technologies used:
-<br>
 Data cleaning, manipulation, exploration and modeling perfomed with Python, SciKit Learn, StatsModels, and R. Text editors and environments include Atom, Jupyter Notebook, and R-Studio. Visuals creates with Matplotlib and draw.io. Web App generated with Flask and jQuery.
 <br>
 
