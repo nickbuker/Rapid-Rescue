@@ -30,5 +30,6 @@ Data cleaning, manipulation, exploration and modeling perfomed with Python, SciK
 <img src="images/logos/r.png" width="120">
 <img src="images/logos/sklearn.png" width="120">
 <img src="images/logos/statsmodels.png" width="120">
+<img src="images/logos/aws2.png" width="120">
 <img src="images/logos/flask.png" width="120">
 <img src="images/logos/jquery.png" width="120">
