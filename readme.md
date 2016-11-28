@@ -19,13 +19,6 @@ Once predictions have been made and units have been allocated to zones, relevant
 <br>
 The data entered by the user is handed to the Poisson Model and History Retriever. The Poisson Model predicts the number of expected emergency medical responses for each zone and then passes that information to the Allocator. The Allocator distributes the units to each zone based on expected need and hands these allocations to the Clusterer. The information entered by the user is also given to the History Retriever, which retrieves relevant background information and passes it to the Clusterer. The Clusterer uses the allocations as well as the relevant historical data to calculate the optimal placements of emergency resources for rapid responses.
 <br><br>
-<img src="images/count_by_day_zones.png" width="800">
-#### Figure 4: Count of Seattle 911 responses by day and zone.
-<br>
-
-<img src="images/seattle_911_neighborhoods.png" width="600">
-#### Figure 5: Seattle medical 911 responses by neighborhood.
-<br>
 Data cleaning, manipulation, exploration and modeling perfomed with Python, SciKit Learn, StatsModels, and R. Text editors and environments include Atom, Jupyter Notebook, and R-Studio. Visuals creates with Matplotlib and draw.io. Web App generated with Flask and jQuery.
 <br>
 
