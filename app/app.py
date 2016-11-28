@@ -9,15 +9,15 @@ import cPickle as pickle
 from ast import literal_eval
 import time
 import pandas as pd
-import matplotlib.pyplot as plt
 import matplotlib as mpl
+mpl.use("Agg")
+import matplotlib.pyplot as plt
 import multiprocessing
 import os
 import glob
 
 
 app = Flask(__name__)
-mpl.use("Agg")
 
 # Set up some data
 df = pd.read_csv('../data/seattle_911_prepped_no_out.csv', low_memory=False)
