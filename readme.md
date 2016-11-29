@@ -1,7 +1,7 @@
 # Predicting Seattle Medical 911 Response Activity and Optimizing Allocation of Resources
 
-##### The goal of this project is to reduce response time to medical emergencies to save lives and improve medical outcomes. Poisson regression was used to estimate the counts of medical emergencies in each area of Seattle. Relevant historical data as well as the Poisson estimations were used with geographic K-means clustering to select the optimal placements of emergency response resources for rapid response.
 ###<a href="url">Rapid-Rescue.com</a>
+##### The goal of this project is to reduce response time to medical emergencies to save lives and improve medical outcomes. Poisson regression was used to estimate the counts of medical emergencies in each area of Seattle. Relevant historical data as well as the Poisson estimations were used with geographic K-means clustering to select the optimal placements of emergency response resources for rapid response.
 <br><br>
 <img src="images/data_and_model.png" width="800">
 #### Figure 1: Count of Seattle 911 responses by day city-wide and Poisson regression model predictions.
