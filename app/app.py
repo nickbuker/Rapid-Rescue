@@ -26,7 +26,7 @@ cores = multiprocessing.cpu_count()
 # Load pickled Poisson model
 # with open('./PoissonModel.pkl', 'rb') as pkl_object:
 #     poisson_model = pickle.load(pkl_object)
-print PoissonModel
+poisson_model = PoissonModel.fit()
 
 # home page
 @app.route('/', methods=['GET', 'POST'])
