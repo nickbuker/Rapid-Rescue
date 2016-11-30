@@ -41,7 +41,7 @@ def predict():
     user_data = request.data
     user_data = literal_eval(user_data)
     # Delete old images
-    _purge_old_images()
+    # _purge_old_images()
     # Make predicton with Poisson model and allocate resources to zones
     preds = poisson_model.predict(user_data)
     alloc = allocator(user_data["num_units"], preds)
