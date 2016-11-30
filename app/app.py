@@ -169,6 +169,7 @@ def _make_plot(df1, df2, df3, df4, df5, df6, df7, centroid_df, user_data):
                 'Zone 5', 'Zone 6', 'Zone 7', 'Units'], fontsize=18)
     ts = str(time.time())
     plt.savefig('../app/static/zztempic'+ ts +'.png')
+    os.chmod('../app/static/zztempic'+ ts +'.png', Oo666)
     return 'zztempic'+ ts +'.png'
 
 
