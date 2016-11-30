@@ -3,7 +3,7 @@ from Poisson import PoissonModel
 from allocation import allocator
 from hist_retrieval import hist_retriever
 from allocation import allocator
-#from clustering import clusterer
+from clustering import clusterer
 from itertools import chain
 import cPickle as pickle
 from ast import literal_eval
