@@ -1,3 +1,4 @@
+import _ssl
 from flask import Flask, render_template, request, jsonify
 from Poisson import PoissonModel
 from allocation import allocator
