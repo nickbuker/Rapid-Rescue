@@ -1,5 +1,5 @@
-import random
 import numpy as np
+import random
 from geopy.distance import vincenty
 from collections import defaultdict
 
