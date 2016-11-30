@@ -1,7 +1,7 @@
 import random
 import pandas as pd
 import numpy as np
-from geopy.distance import vincenty
+from haversine import haversine
 from collections import defaultdict
 
 
@@ -30,12 +30,12 @@ def clusterer(data, max_iter=1000):
         if type(limit) == int:
             X = X.sample(n=limit, random_state=rand_state)
 
-        # Zip data latitude and longitude into tuples for Vincenty distance
+        # Zip data latitude and longitude into tuples for haversine distance
         lats = [lat for lat in X.Latitude]
         longs = [long_ for long_ in X.Longitude]
         X_list = zip(lats, longs)
 
-        # Zip centroid latitude and longitude into tuples for Vincenty distance
+        # Zip centroid latitude and longitude into tuples for haversine distance
         cent_df = X.sample(n=k, random_state=rand_state)
         lats_cent = cent_df.Latitude
         longs_cent = cent_df.Longitude
@@ -45,7 +45,7 @@ def clusterer(data, max_iter=1000):
             clusters = defaultdict(list)
             # Assign each point to nearest cluster for nearest centroid
             for x in X_list:
-                distances = [vincenty(x, centroid) for centroid in centroids]
+                distances = [haversine(x, centroid) for centroid in centroids]
                 centroid = centroids[np.argmin(distances)]
                 clusters[centroid].append(x)
 
