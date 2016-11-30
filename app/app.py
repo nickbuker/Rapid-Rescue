@@ -24,7 +24,7 @@ df = pd.read_csv('../data/seattle_911_prepped_no_out.csv', low_memory=False)
 df.drop(['Unnamed: 0'], axis=1, inplace=True)
 cores = multiprocessing.cpu_count()
 # Load pickled Poisson model
-with open('PoissonModel.pkl', 'rb') as pkl_object:
+with open('./PoissonModel.pkl', 'rb') as pkl_object:
     poisson_model = pickle.load(pkl_object)
 
 
