@@ -22,13 +22,5 @@ The data entered by the user is handed to the Poisson Model and History Retrieve
 Data cleaning, manipulation, exploration and modeling perfomed with Python, SciKit Learn, StatsModels, and R. Text editors and environments include Atom, Jupyter Notebook, and R-Studio. Visuals creates with Matplotlib and draw.io. Web App generated with Flask and jQuery.
 <br>
 
-<img src="images/logos/seattle.png" width="120">
-<img src="images/logos/python.png" width="120">
-<img src="images/logos/matplotlib.png" width="120">
-<img src="images/logos/jupyter.png" width="120">
-<img src="images/logos/r.png" width="120">
-<img src="images/logos/sklearn.png" width="120">
-<img src="images/logos/statsmodels.png" width="120">
-<img src="images/logos/aws2.png" width="120">
-<img src="images/logos/flask.png" width="120">
-<img src="images/logos/jquery.png" width="120">
+<img src="images/logos/seattle.png" width="120"> <img src="images/logos/python.png" width="120"> <img src="images/logos/matplotlib.png" width="120"> <img src="images/logos/jupyter.png" width="120"> <img src="images/logos/r.png" width="120">
+<img src="images/logos/sklearn.png" width="120"> <img src="images/logos/statsmodels.png" width="120"> <img src="images/logos/aws2.png" width="120"> <img src="images/logos/flask.png" width="120"> <img src="images/logos/jquery.png" width="120">
